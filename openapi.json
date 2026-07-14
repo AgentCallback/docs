@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://agentcallback.ai",
+      "url": "https://agentcallback.com",
       "description": "AgentCallback API server"
     }
   ],

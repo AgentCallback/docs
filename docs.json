@@ -133,7 +133,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://agentcallback.ai/sign-in"
+      "href": "https://agentcallback.com/sign-in"
     }
   }
 }
