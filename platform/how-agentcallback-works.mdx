@@ -1,0 +1,45 @@
+---
+title: How AgentCallback works
+description: Understand the building blocks of AgentCallback and how a call flows through them.
+---
+
+AgentCallback is a platform for building AI voice agents that make and receive phone calls on your behalf.
+
+## The building blocks
+
+<CardGroup cols={2}>
+  <Card title="Voice agents" icon="bot" href="/build-voice-agents/single-prompt">
+    The instructions and logic your agent follows during a call — either a Single Prompt or a Pathway.
+  </Card>
+  <Card title="Phone numbers" icon="phone" href="/phone-numbers/add-your-twilio-credentials">
+    The Twilio or SIP numbers your agents use to place and receive calls.
+  </Card>
+  <Card title="Voices" icon="mic" href="/voices/preview-voices">
+    The synthesized voice your agent speaks with, including your own cloned voices.
+  </Card>
+  <Card title="Campaigns" icon="rocket" href="/deploy/campaigns/overview">
+    A contact list, an agent, and a calling schedule bundled together for outbound calling at scale.
+  </Card>
+</CardGroup>
+
+## How a call happens
+
+1. A phone number receives an inbound call, or a campaign places an outbound call.
+2. The assigned agent runs — following a Single Prompt or moving through a Pathway.
+3. During the call, the agent can read and update [variables](/build-voice-agents/variables) and [state variables](/build-voice-agents/state-variables), and call [tools](/build-voice-agents/tool-calls) to take actions or fetch data.
+4. When the call ends, AgentCallback classifies a [call outcome](/build-voice-agents/call-outcomes) from the transcript.
+5. If configured, a [post-call webhook](/build-voice-agents/post-call-webhooks) fires with the call's data.
+6. The call is recorded in [Call logs](/monitoring/call-logs), and its outcome rolls up into [campaign](/monitoring/campaign-stats) and [account](/monitoring/overall-stats) stats.
+
+## Two ways to build an agent
+
+- **Single Prompt** — a single set of instructions the agent follows for the whole call. Best for straightforward, open-ended conversations.
+- **Pathways** — a visual flow of nodes and transitions. Best for calls that need a fixed step order, branching logic, or escalation paths.
+
+<Tip>
+Start with a Single Prompt if you are not sure which fits. You can move to Pathways later if the conversation needs more structure.
+</Tip>
+
+## Next step
+
+[Build your first agent in the Quickstart](/platform/quickstart).

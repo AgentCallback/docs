@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
   "name": "AgentCallback Documentation",
-  "description": "Learn how to set up AgentCallback, collaborate with your team, and create AI voice agents.",
+  "description": "Learn how AgentCallback works, build and deploy AI voice agents, and manage your team.",
   "colors": {
     "primary": "#2563EB",
     "light": "#60A5FA",
@@ -29,20 +29,81 @@
         {
           "anchor": "Get started",
           "icon": "rocket",
-          "href": "/get-started/sign-up"
+          "href": "/platform/quickstart"
         }
       ]
     },
     "directory": "card",
     "groups": [
       {
-        "group": "Get started",
-        "icon": "rocket",
+        "group": "Platform",
+        "icon": "layout-dashboard",
         "expanded": true,
         "pages": [
-          "get-started/sign-up",
-          "get-started/manage-your-team",
-          "get-started/create-a-voice-agent"
+          "platform/how-agentcallback-works",
+          "platform/quickstart",
+          "platform/using-agent-builder"
+        ]
+      },
+      {
+        "group": "Build voice agents",
+        "icon": "hammer",
+        "pages": [
+          "build-voice-agents/single-prompt",
+          "build-voice-agents/pathways",
+          "build-voice-agents/variables",
+          "build-voice-agents/state-variables",
+          "build-voice-agents/tool-calls",
+          "build-voice-agents/call-outcomes",
+          "build-voice-agents/post-call-webhooks"
+        ]
+      },
+      {
+        "group": "Phone numbers",
+        "icon": "phone",
+        "pages": [
+          "phone-numbers/add-your-twilio-credentials",
+          "phone-numbers/add-your-sip"
+        ]
+      },
+      {
+        "group": "Voices",
+        "icon": "mic",
+        "pages": [
+          "voices/preview-voices",
+          "voices/cloning-voices"
+        ]
+      },
+      {
+        "group": "Deploy",
+        "icon": "rocket",
+        "pages": [
+          {
+            "group": "Campaigns",
+            "pages": [
+              "deploy/campaigns/overview",
+              "deploy/campaigns/setup-retries",
+              "deploy/campaigns/setup-workflows",
+              "deploy/campaigns/setup-schedule"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Monitoring",
+        "icon": "chart-line",
+        "pages": [
+          "monitoring/campaign-stats",
+          "monitoring/overall-stats",
+          "monitoring/call-logs"
+        ]
+      },
+      {
+        "group": "Accounts and workspace",
+        "icon": "building-2",
+        "pages": [
+          "accounts-and-workspace/get-api-keys",
+          "accounts-and-workspace/manage-your-team"
         ]
       }
     ]

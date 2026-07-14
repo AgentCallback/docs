@@ -1,0 +1,34 @@
+---
+title: Setup workflows
+description: Define a multi-day, multi-attempt calling sequence for each contact.
+---
+
+A workflow defines a multi-day, multi-attempt calling sequence for each contact in a campaign, instead of a single fixed retry interval.
+
+## Configure attempts
+
+<Steps>
+  <Step title="Add an attempt">
+    Add an attempt to the workflow.
+  </Step>
+  <Step title="Set the day">
+    Set which day of the workflow this attempt happens on, relative to when the contact enters the campaign.
+  </Step>
+  <Step title="Set the time window">
+    Set a start time and end time — the attempt will only be placed within this window.
+  </Step>
+  <Step title="Enable double dial, if needed">
+    Turn on double dial to call the contact twice back-to-back during this attempt.
+  </Step>
+  <Step title="Repeat for each attempt">
+    Add as many attempts as your sequence needs, across as many days as needed.
+  </Step>
+</Steps>
+
+## Retry outcomes
+
+Choose which [call outcomes](/build-voice-agents/call-outcomes) should cause a contact to continue through the workflow's remaining attempts, rather than being treated as done.
+
+## Track progress
+
+Each contact's progress through the workflow — which attempt it's on and whether double dial has already been used — is tracked automatically and rolls up into [campaign stats](/monitoring/campaign-stats).

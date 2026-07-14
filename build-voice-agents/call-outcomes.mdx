@@ -1,0 +1,51 @@
+---
+title: Call outcomes
+description: Classify how a call ended, automatically or with your own categories.
+---
+
+A call outcome classifies how a call ended. AgentCallback evaluates the outcome automatically after every call.
+
+## Default outcome categories
+
+AgentCallback suggests a starting set of categories:
+
+- `DECLINED`
+- `CALLBACK_REQUESTED`
+- `VOICE_MAIL`
+- `WRONG_NUMBER`
+- `CALLEE_DID_NOT_PICKUP`
+- `CALLEE_HUNGUP`
+- `OTHER`
+
+<Note>
+`VOICE_MAIL` and `CALLEE_DID_NOT_PICKUP` are required categories and can't be removed — they're used elsewhere in the platform, including campaign retry logic.
+</Note>
+
+## Define custom outcomes
+
+<Steps>
+  <Step title="Open the Outcomes tab">
+    In your agent, select the **Outcomes** tab.
+  </Step>
+  <Step title="Add a category">
+    Give the category a name and a description of when it applies. The description is what AgentCallback uses to decide whether a call matches it.
+  </Step>
+  <Step title="Save">
+    Save the agent to apply your outcome categories.
+  </Step>
+</Steps>
+
+## How outcomes are classified
+
+After a call ends, AgentCallback runs an evaluation prompt against the call's transcript to decide which of your declared categories best fits. If the result doesn't match any declared category, the call is marked `OTHER`.
+
+## Where outcomes show up
+
+- On the call's record, alongside its transcript and recording — see [Call logs](/monitoring/call-logs).
+- In the outcome breakdown on a campaign's detail page — see [Campaign stats](/monitoring/campaign-stats).
+- As a condition for [post-call webhooks](/build-voice-agents/post-call-webhooks).
+- As a trigger for [campaign retries](/deploy/campaigns/setup-retries).
+
+## Next step
+
+[Post-call webhooks](/build-voice-agents/post-call-webhooks) to notify your own systems after a call ends.

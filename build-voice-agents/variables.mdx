@@ -1,0 +1,63 @@
+---
+title: Variables
+description: Define the data your agent needs before a call starts.
+---
+
+Variables hold data your agent needs before a call begins — a customer's name, an account number, an appointment time, or anything else you pass in per call.
+
+## Variable fields
+
+Each variable, configured in the agent's **Variables** tab, has:
+
+| Field | Description |
+| --- | --- |
+| `name` | The variable's identifier, used to reference it in your prompt. |
+| `type` | `string`, `number`, `boolean`, or `lookup`. |
+| `required` | Whether the call can't start without a value for this variable. |
+| `description` | A note describing what the variable holds. |
+| `defaultValue` | The value used when none is supplied. |
+| `dataset` / `key` | Used only for `lookup`-type variables — see below. |
+
+## Lookup variables
+
+A `lookup`-type variable resolves its value before the call starts, by looking it up in a reference dataset using another variable as the lookup key. Use this when a call should pull in data — like account details or order status — that isn't passed in directly but can be looked up from a value you do have, such as a phone number or customer ID.
+
+<Note>
+Variables resolve once, before the call starts. If your agent needs to track data that changes *during* the call, use [state variables](/build-voice-agents/state-variables) instead.
+</Note>
+
+## Use variables in your prompt
+
+Reference a variable by name with `{{name}}`, and branch your wording with conditionals:
+
+```
+{{#if appointment_time}}
+I'm calling to confirm your appointment at {{appointment_time}}.
+{{else}}
+I'm calling to schedule an appointment.
+{{/if}}
+```
+
+## Add a variable
+
+<Steps>
+  <Step title="Open the Variables tab">
+    In your agent, select the **Variables** tab.
+  </Step>
+  <Step title="Add a variable">
+    Select the option to add a new variable.
+  </Step>
+  <Step title="Set its fields">
+    Enter a name, type, and description. Mark it required if the call shouldn't start without it, and set a default value if useful.
+  </Step>
+  <Step title="Configure lookup settings, if needed">
+    For a `lookup` variable, select the reference dataset and the key variable to look it up by.
+  </Step>
+  <Step title="Save">
+    Save the agent to apply the new variable.
+  </Step>
+</Steps>
+
+## Next step
+
+[State variables](/build-voice-agents/state-variables) to track data that changes during the call.

@@ -1,0 +1,56 @@
+---
+title: Pathways
+description: Build a visual flow of nodes and transitions for calls that need structure.
+---
+
+Pathways is a visual flow editor for calls that need a fixed step order, branching, tool gating, or escalation subflows — an alternative to a [Single Prompt](/build-voice-agents/single-prompt) agent.
+
+## When to use Pathways
+
+Use Pathways when a Single Prompt would get too complicated to manage as a single block of instructions — for example, a call that must collect information in a specific order, branch based on the caller's answers, or hand off to a human at a specific point.
+
+## Node types
+
+| Node | Purpose |
+| --- | --- |
+| **Begin** | The entry point of the pathway. Every pathway has exactly one. |
+| **Conversation** | A step where the agent talks with the caller. Holds its own prompt, available tools, state captures, and transitions to other nodes. |
+| **Action** | Performs an action instead of talking — transfer the call (`transferCall`), or hand off over SIP (`sipColdTransfer` for a cold transfer, `sipWarmTransfer` for a warm transfer). |
+| **End call** | Ends the call. |
+| **Return** | Resumes the most recent conversation node — useful as a fallback destination after a Global node interrupts the flow. |
+| **Global** | Can be triggered from any conversation node, based on a natural-language condition you describe rather than a fixed transition. |
+
+## Build a pathway
+
+<Steps>
+  <Step title="Open the Pathways editor">
+    Create a new agent and choose **Pathways** as the script type, or open an existing Pathways agent.
+  </Step>
+  <Step title="Add your begin node">
+    Every pathway starts with a single **Begin** node — it's added automatically as the starting point.
+  </Step>
+  <Step title="Add conversation nodes">
+    Add a **Conversation** node for each step of the call. Write the prompt for that step, and add any tools or state captures it needs.
+  </Step>
+  <Step title="Wire up transitions">
+    Connect nodes with edges to define how the conversation moves from one step to the next.
+  </Step>
+  <Step title="Add action, end, and global nodes as needed">
+    Add **Action** nodes for transfers, **End call** nodes to close out the conversation, and **Global** nodes for conditions that should be reachable from anywhere in the flow.
+  </Step>
+  <Step title="Save">
+    Save the pathway. AgentCallback opens the new agent and starts its default initial test.
+  </Step>
+</Steps>
+
+## Transitions and state
+
+A conversation node's transitions can include state updates — setting a [state variable](/build-voice-agents/state-variables) as the agent moves to the next node. This lets later nodes, tools, and post-call logic reference what happened earlier in the call.
+
+## Global nodes
+
+Global nodes don't sit on a fixed transition path. Instead, you describe the condition that should trigger them in natural language — for example, "the caller asks to speak to a manager" — and the agent can jump to that node from any conversation node when the condition is met. Pair a Global node with a **Return** node so the conversation can resume where it left off.
+
+## Next step
+
+[Variables](/build-voice-agents/variables) to give your agent the data it needs before a call starts.

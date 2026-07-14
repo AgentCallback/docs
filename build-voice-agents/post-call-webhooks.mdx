@@ -1,0 +1,66 @@
+---
+title: Post-call webhooks
+description: Send an HTTP request to your own systems after a call ends.
+---
+
+A post-call webhook sends an HTTP request to a URL you specify after a call ends, optionally only when the call matches conditions you define.
+
+## Enable a webhook
+
+<Steps>
+  <Step title="Open the Post-call Webhook section">
+    In your agent, open the **Post-call Webhook** section.
+  </Step>
+  <Step title="Turn it on">
+    Enable the webhook.
+  </Step>
+  <Step title="Set the URL and method">
+    Enter the URL to call, and choose `GET` or `POST`.
+  </Step>
+</Steps>
+
+## Set trigger conditions
+
+By default, a webhook fires for every call. You can restrict it to fire only when the call matches specific conditions.
+
+Conditions are organized into trigger groups. Each group combines one or more conditions with `AND` or `OR`, and each condition compares a [state variable](/build-voice-agents/state-variables) or the [call outcome](/build-voice-agents/call-outcomes) against a value using `equals` or `not_equals`. The webhook fires as soon as any one trigger group matches.
+
+For example, you could fire a webhook only when `call_outcome` equals `CALLBACK_REQUESTED`, or when a state variable like `escalated` equals `true`.
+
+## Default payload
+
+If you don't configure a custom payload, AgentCallback sends this JSON body:
+
+```json
+{
+  "callId": "...",
+  "call_state": "...",
+  "call_outcome": "...",
+  "call_end_state": "...",
+  "transfer_destination": "...",
+  "call_summary": "...",
+  "call_transcript": "...",
+  "start_time": "...",
+  "end_time": "...",
+  "phone_number": "...",
+  "contact_data": "...",
+  "script_variables": "...",
+  "requested_callback_at": "..."
+}
+```
+
+## Customize the payload
+
+You can define your own payload template using the same `{{name}}` interpolation and `{{#if}}...{{else}}...{{/if}}` conditionals available in your agent's prompt — see [Variables](/build-voice-agents/variables) for the syntax.
+
+<Tip>
+Reference state variables in your custom payload with `{{state.variableKey}}`, just as you would in your agent's prompt.
+</Tip>
+
+## Check delivery results
+
+After a call, the delivery result — whether the webhook was attempted, whether conditions matched, the response status code, and any error — is shown alongside the call's other details.
+
+## Next steps
+
+[Add your Twilio credentials](/phone-numbers/add-your-twilio-credentials) or [add your SIP trunk](/phone-numbers/add-your-sip) to connect a phone number to your agents.

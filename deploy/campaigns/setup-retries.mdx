@@ -1,0 +1,24 @@
+---
+title: Setup retries
+description: Control what happens when a call doesn't succeed.
+---
+
+Configure a campaign to automatically retry contacts whose calls end in a [call outcome](/build-voice-agents/call-outcomes) you don't consider final.
+
+## Simple retries
+
+<Steps>
+  <Step title="Choose retry outcomes">
+    Select which outcomes should trigger a retry — for example, voicemail or no pickup.
+  </Step>
+  <Step title="Set the attempt count">
+    Set how many times a contact should be retried.
+  </Step>
+  <Step title="Set the retry interval">
+    Set how many hours to wait between attempts.
+  </Step>
+</Steps>
+
+<Note>
+For a more structured, multi-day retry sequence — with specific time windows and optional double-dialing per attempt — use [workflows](/deploy/campaigns/setup-workflows) instead. A configured workflow supersedes simple retry settings.
+</Note>

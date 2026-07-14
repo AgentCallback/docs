@@ -1,0 +1,33 @@
+---
+title: State variables
+description: Track data that changes while the call is in progress.
+---
+
+State variables hold data your agent captures or updates *during* a call — as opposed to [variables](/build-voice-agents/variables), which are set before the call starts.
+
+<Note>
+Use variables for data you already know before the call. Use state variables for data the agent learns or decides as the conversation happens.
+</Note>
+
+## Declare a state variable
+
+A state variable is a `key` and a `defaultValue` — the value it holds until the agent updates it during the call.
+
+## Capture state in Pathways
+
+In a [Pathways](/build-voice-agents/pathways) agent, conversation nodes can declare state captures — data the agent should extract from the caller at that step, with a description to guide it. Transitions can also declare state updates, setting a state variable's value as the agent moves to the next node.
+
+## Update state outside Pathways
+
+On a [Single Prompt](/build-voice-agents/single-prompt) agent, the agent updates state using the `updateCallState` tool. It can only set keys you've declared as allowed for the agent — this keeps the agent from writing arbitrary state during the call.
+
+## Reference state later
+
+Reference a state variable's current value in your prompt with `{{state.variableKey}}`. State variables also feed into other parts of the platform:
+
+- [Call outcome](/build-voice-agents/call-outcomes) classification can take final state into account.
+- [Post-call webhooks](/build-voice-agents/post-call-webhooks) can include state values in their payload, and use them as trigger conditions.
+
+## Next step
+
+[Tool calls](/build-voice-agents/tool-calls) to let your agent take actions during the call.

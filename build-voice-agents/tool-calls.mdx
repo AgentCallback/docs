@@ -1,0 +1,69 @@
+---
+title: Tool calls
+description: Let your agent take actions and fetch data during a call.
+---
+
+Tools let your agent do more than talk — transfer a call, look up information, check availability, or book an appointment while the conversation is happening.
+
+## Built-in tools
+
+| Tool | What it does |
+| --- | --- |
+| `transferCall` | Transfers the call to another number. |
+| `transferCallSecondary` | Transfers the call to a secondary destination. |
+| `sipColdTransfer` | Transfers the call over SIP without staying on the line. |
+| `sipWarmTransfer` | Transfers the call over SIP while briefly staying on the line to hand off context. |
+| `pauseTimer` | Pauses call timing logic, for example while waiting on hold. |
+| `queryKB` | Searches a knowledge base for information to answer the caller. |
+| `numberValidation` | Validates a phone number the caller provides. |
+
+## Custom API tools
+
+The `apiRequest` tool lets your agent call any external API during the call — for example, to look up an order or submit a form.
+
+<Steps>
+  <Step title="Open the Tools section">
+    In your agent, open the **Tools** section and add a new custom API tool.
+  </Step>
+  <Step title="Name it">
+    Give the tool a name the agent will use to decide when to call it.
+  </Step>
+  <Step title="Configure the request">
+    Set the HTTP method and URL, and a request template for the body or query parameters.
+  </Step>
+  <Step title="Add authentication and headers">
+    Configure any headers or authentication the API requires.
+  </Step>
+  <Step title="Set the response path">
+    Specify where in the API's response the value the agent needs lives, so the agent can use it in the conversation.
+  </Step>
+</Steps>
+
+## Calendar and booking tools
+
+<AccordionGroup>
+  <Accordion title="Lead Connector">
+    Check availability and create appointments through Lead Connector, with support for rescheduling.
+  </Accordion>
+  <Accordion title="Google Calendar">
+    Check availability and create appointments on a connected Google Calendar, with support for rescheduling.
+  </Accordion>
+  <Accordion title="Cal.com">
+    Check availability and create appointments through Cal.com, with support for rescheduling.
+  </Accordion>
+  <Accordion title="Calendly">
+    Check availability and create appointments through Calendly, with support for rescheduling.
+  </Accordion>
+</AccordionGroup>
+
+## Enable and configure tools
+
+Each agent has its own set of enabled tools. Open the **Tools** section, enable the tools your agent needs, and fill in any tool-specific configuration.
+
+## Review tool call logs
+
+After a call, you can review which tools the agent called and what they returned from the call's detail view. See [Call logs](/monitoring/call-logs) for more.
+
+## Next step
+
+[Call outcomes](/build-voice-agents/call-outcomes) to classify how each call ended.

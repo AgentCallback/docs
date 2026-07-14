@@ -1,0 +1,45 @@
+---
+title: Single Prompt
+description: Configure an agent that follows one set of instructions for the whole call.
+---
+
+Single Prompt agents follow one flat set of instructions for the entire call, instead of moving between the nodes of a Pathway.
+
+## When to use Single Prompt
+
+Single Prompt works well for open-ended or straightforward conversations that don't need a fixed step order or branching logic. For calls that need strict structure, branching, or escalation paths, use [Pathways](/build-voice-agents/pathways) instead.
+
+## Choose a script type
+
+<Tabs>
+  <Tab title="Outbound Single Stage">
+    Use this type for calls your agent places to customers, such as reminders, confirmations, or outreach. Select **Outbound Single Stage** as the script type when creating your agent.
+  </Tab>
+  <Tab title="Inbound Single Stage">
+    Use this type for calls customers place to you, such as support or booking requests. Select **Inbound Single Stage** as the script type when creating your agent.
+  </Tab>
+</Tabs>
+
+## Write your prompt
+
+The agent's instructions live in a single prompt field. Write it as you would brief a live phone agent: the goal of the call, how to greet the caller, what to ask or say, and how to handle common situations.
+
+You can reference [variables](/build-voice-agents/variables) in your prompt using `{{name}}`, and branch the wording with conditionals:
+
+```
+{{#if customer_name}}
+Hi {{customer_name}}, this is a call from AgentCallback.
+{{else}}
+Hi, this is a call from AgentCallback.
+{{/if}}
+```
+
+See [Variables](/build-voice-agents/variables) for the full syntax and available fields.
+
+## Save and test
+
+Save the agent, then open its **Tests** tab to run the automatic initial test — see [Test your agent](/platform/quickstart#test-your-agent) for the walkthrough.
+
+## Next step
+
+[Variables](/build-voice-agents/variables) to give your agent the data it needs before a call starts.

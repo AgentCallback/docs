@@ -1,0 +1,53 @@
+---
+title: Add your SIP
+description: Connect your own SIP trunk for inbound or outbound calling.
+---
+
+Connect your own SIP trunk to place or receive calls without going through Twilio.
+
+<Tabs>
+  <Tab title="Outbound">
+    Route outbound calls through your own SIP trunk instead of a purchased number.
+
+    <Steps>
+      <Step title="Open SIP settings">
+        In the dashboard, open the SIP number settings.
+      </Step>
+      <Step title="Enter your trunk details">
+        Enter your **SIP username**, **SIP password**, and **SIP URI**.
+      </Step>
+      <Step title="Set dial prefix rules, if needed">
+        Configure dial prefix rules if your trunk requires specific number formatting for outbound calls.
+      </Step>
+      <Step title="Save">
+        Save your SIP configuration so it's available as an outbound calling option.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Inbound">
+    Register your SIP trunk so AgentCallback can receive inbound calls through it.
+
+    <Steps>
+      <Step title="Open SIP settings">
+        In the dashboard, open the SIP number settings.
+      </Step>
+      <Step title="Enter your registration details">
+        Enter your **SIP username**, **password**, **proxy**, **outbound proxy**, and **auth user**. AgentCallback uses these to register with the platform's SIP endpoint on your behalf.
+      </Step>
+      <Step title="Restrict access, if needed">
+        Optionally configure an IP allowlist and country prefix rules to control which sources can reach your inbound number.
+      </Step>
+      <Step title="Save">
+        Save your SIP configuration and assign it an inbound agent.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Tip>
+Place a test outbound call after saving your SIP configuration to confirm your trunk is set up correctly before relying on it for real calls.
+</Tip>
+
+## Next step
+
+[Preview voices](/voices/preview-voices) to choose how your agent sounds.

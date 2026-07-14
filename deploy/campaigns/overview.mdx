@@ -1,0 +1,45 @@
+---
+title: Campaigns
+description: Pair an agent with a contact list to place outbound calls at scale.
+---
+
+A campaign pairs an agent with a list of contacts and a calling configuration, so you can place outbound calls at scale instead of one at a time.
+
+## Create a campaign
+
+<Steps>
+  <Step title="Select an agent">
+    Choose the outbound agent the campaign should use.
+  </Step>
+  <Step title="Upload your contact list">
+    Upload a file containing the people you want to call.
+  </Step>
+  <Step title="Map your columns">
+    Map one column to the phone number to dial, and map any other columns to the agent's [variables](/build-voice-agents/variables) so each call has the right data.
+  </Step>
+</Steps>
+
+## Calling configuration
+
+A few settings control how the campaign places calls:
+
+| Setting | Description |
+| --- | --- |
+| Routing strategy | How outbound caller ID is chosen — `single` (one number), `geographic`, `random`, or `round_robin`. |
+| Max concurrent calls | The most calls the campaign will have in progress at once. |
+| Call spacing | How long, in seconds, to hold a concurrency slot after starting a call, before starting another. |
+| Daily call limit | The most calls the campaign will place in a day. |
+
+## Next steps
+
+<CardGroup cols={3}>
+  <Card title="Setup retries" icon="repeat" href="/deploy/campaigns/setup-retries">
+    Control what happens when a call doesn't succeed.
+  </Card>
+  <Card title="Setup workflows" icon="workflow" href="/deploy/campaigns/setup-workflows">
+    Define a multi-day calling sequence per contact.
+  </Card>
+  <Card title="Setup schedule" icon="calendar" href="/deploy/campaigns/setup-schedule">
+    Control when the campaign starts and what hours it can call.
+  </Card>
+</CardGroup>
