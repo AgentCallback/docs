@@ -1,0 +1,42 @@
+---
+title: Introduction
+description: Authenticate with the AgentCallback API and start making requests.
+---
+
+The AgentCallback Public API lets you create calls, manage voice agents, run campaigns, and look up phone numbers and voices from your own systems.
+
+## Authentication
+
+Every request must include your API key in the `x-api-key` header.
+
+```bash
+curl https://agentcallback.ai/api/validate-token \
+  -H "x-api-key: YOUR_API_KEY"
+```
+
+<Card title="Get an API key" icon="key" href="/accounts-and-workspace/get-api-keys">
+Generate an API key from Dashboard > API Keys.
+</Card>
+
+## Base URL
+
+```
+https://agentcallback.ai
+```
+
+## What you can do
+
+<CardGroup cols={2}>
+  <Card title="Calls" icon="phone">
+    Create outbound calls and retrieve call status and history.
+  </Card>
+  <Card title="Voice Agents" icon="bot">
+    Create, update, and version voice agent scripts.
+  </Card>
+  <Card title="Campaigns" icon="rocket">
+    Create campaigns, control their lifecycle, and export their calls.
+  </Card>
+  <Card title="Phone Numbers & Voices" icon="mic">
+    List phone numbers and voices available to your organization.
+  </Card>
+</CardGroup>

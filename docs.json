@@ -34,83 +34,99 @@
       ]
     },
     "directory": "card",
-    "groups": [
+    "tabs": [
       {
-        "group": "Platform",
-        "icon": "layout-dashboard",
-        "expanded": true,
-        "pages": [
-          "platform/how-agentcallback-works",
-          "platform/quickstart",
-          "platform/using-agent-builder"
-        ]
-      },
-      {
-        "group": "Build voice agents",
-        "icon": "hammer",
-        "pages": [
-          "build-voice-agents/single-prompt",
-          "build-voice-agents/pathways",
-          "build-voice-agents/variables",
-          "build-voice-agents/state-variables",
-          "build-voice-agents/tool-calls",
-          "build-voice-agents/call-outcomes",
-          "build-voice-agents/post-call-webhooks"
-        ]
-      },
-      {
-        "group": "Phone numbers",
-        "icon": "phone",
-        "pages": [
-          "phone-numbers/add-your-twilio-credentials",
-          "phone-numbers/add-your-sip"
-        ]
-      },
-      {
-        "group": "Voices",
-        "icon": "mic",
-        "pages": [
-          "voices/preview-voices",
-          "voices/cloning-voices"
-        ]
-      },
-      {
-        "group": "Deploy",
-        "icon": "rocket",
-        "pages": [
+        "tab": "Documentation",
+        "groups": [
           {
-            "group": "Campaigns",
+            "group": "Platform",
+            "icon": "layout-dashboard",
+            "expanded": true,
             "pages": [
-              "deploy/campaigns/overview",
-              "deploy/campaigns/setup-retries",
-              "deploy/campaigns/setup-workflows",
-              "deploy/campaigns/setup-schedule"
+              "platform/how-agentcallback-works",
+              "platform/quickstart",
+              "platform/using-agent-builder"
+            ]
+          },
+          {
+            "group": "Build voice agents",
+            "icon": "hammer",
+            "pages": [
+              "build-voice-agents/single-prompt",
+              "build-voice-agents/pathways",
+              "build-voice-agents/variables",
+              "build-voice-agents/state-variables",
+              "build-voice-agents/tool-calls",
+              "build-voice-agents/call-outcomes",
+              "build-voice-agents/post-call-webhooks"
+            ]
+          },
+          {
+            "group": "Phone numbers",
+            "icon": "phone",
+            "pages": [
+              "phone-numbers/add-your-twilio-credentials",
+              "phone-numbers/add-your-sip"
+            ]
+          },
+          {
+            "group": "Voices",
+            "icon": "mic",
+            "pages": [
+              "voices/preview-voices",
+              "voices/cloning-voices"
+            ]
+          },
+          {
+            "group": "Deploy",
+            "icon": "rocket",
+            "pages": [
+              {
+                "group": "Campaigns",
+                "pages": [
+                  "deploy/campaigns/overview",
+                  "deploy/campaigns/setup-retries",
+                  "deploy/campaigns/setup-workflows",
+                  "deploy/campaigns/setup-schedule"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Monitoring",
+            "icon": "chart-line",
+            "pages": [
+              "monitoring/campaign-stats",
+              "monitoring/overall-stats",
+              "monitoring/call-logs"
+            ]
+          },
+          {
+            "group": "Accounts and workspace",
+            "icon": "building-2",
+            "pages": [
+              "accounts-and-workspace/get-api-keys",
+              "accounts-and-workspace/manage-your-team"
             ]
           }
         ]
       },
       {
-        "group": "Monitoring",
-        "icon": "chart-line",
-        "pages": [
-          "monitoring/campaign-stats",
-          "monitoring/overall-stats",
-          "monitoring/call-logs"
-        ]
-      },
-      {
-        "group": "Accounts and workspace",
-        "icon": "building-2",
-        "pages": [
-          "accounts-and-workspace/get-api-keys",
-          "accounts-and-workspace/manage-your-team"
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Get started",
+            "icon": "key",
+            "pages": ["api-reference/introduction"]
+          },
+          {
+            "group": "Endpoints",
+            "icon": "code",
+            "openapi": "openapi.json"
+          }
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [],
